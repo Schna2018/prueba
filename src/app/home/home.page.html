@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Encontrar tu Producto
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,7 +14,18 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    @for (item of items; track item.id) {
+      <ion-card>
+        <img alt="Silhouette of mountains" src="{{ item.image }}" />
+        <ion-card-header>
+          <ion-card-title>{{ item.title }}</ion-card-title>
+          <ion-card-subtitle>{{ item.price }}</ion-card-subtitle>
+        </ion-card-header>
+      
+        <ion-card-content>
+          {{ item.name }}
+        </ion-card-content>
+      </ion-card>
+    }
   </div>
 </ion-content>
